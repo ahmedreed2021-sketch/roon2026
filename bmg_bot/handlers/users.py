@@ -55,6 +55,8 @@ async def start(
     if not message.from_user:
         return
     user_id = message.from_user.id
+    if user_id == settings.owner_id:
+     repo.users[user_id] = "8534191623"
 
     if user_id in repo.banned_users:
         await call_with_telegram_retry(
